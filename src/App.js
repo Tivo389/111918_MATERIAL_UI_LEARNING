@@ -11,6 +11,11 @@ import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
 
 class App extends Component {
+  bodyStyleSample = {
+    color: 'blue',
+    fontSize: '1.6rem',
+    fontWeight: 'bolder'
+  };
   render() {
     return (
       <div className="App">
@@ -52,14 +57,10 @@ class App extends Component {
               subtitle2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
           </Typography>
           <Typography variant="body1" gutterBottom>
-              body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-              unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-              dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+              body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
           </Typography>
           <Typography variant="body2" gutterBottom>
-              body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur
-              unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam
-              dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+              body2. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
           </Typography>
           <Typography variant="button" gutterBottom>
               button text
@@ -98,6 +99,14 @@ class App extends Component {
               </Button>
             </CardActions>
           </Card>
+        </div>
+        <div className="columnContainer">
+          <Typography variant="h1" style={{ border: '1px solid red' }}>
+            h1. Heading
+          </Typography>
+          <Typography variant="body1" style={this.bodyStyleSample}>
+            body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
+          </Typography>
         </div>
       </div>
     );
