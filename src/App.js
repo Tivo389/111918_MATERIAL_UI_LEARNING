@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import CardClass from './CardClass';
+import CardClassState from './CardClassState';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -11,15 +13,31 @@ import Icon from '@material-ui/core/Icon';
 import Typography from '@material-ui/core/Typography';
 
 class App extends Component {
-  bodyStyleSample = {
-    color: 'blue',
-    fontSize: '1.6rem',
-    fontWeight: 'bolder'
+  styles = {
+    typographySample: {
+      color: 'blue',
+      fontSize: '1.6rem',
+      fontWeight: 'bolder'
+    },
+    cardSample: {
+      card: {
+        maxWidth: 345,
+        borderRadius: 20
+      },
+      cardText: {
+        textAlign: 'left'
+      }
+    }
   };
+
   render() {
     return (
       <div className="App">
+
         <div className="columnContainer elementSpacing">
+          <Typography variant="h3">
+            –&emsp;BUTTONS&emsp;–
+          </Typography>
           <Button variant="contained" color="primary">Contained Button Primary</Button>
           <Button variant="text" color="primary">Text Button Primary</Button>
           <Button variant="outlined" color="primary">Outlined Button Primary</Button>
@@ -31,7 +49,11 @@ class App extends Component {
           </Button>
           <Button variant="extendedFab" color="primary">Extended Fab Button Primary</Button>
         </div>
+
         <div className="columnContainer">
+          <Typography variant="h3" gutterBottom>
+            –&emsp;TYPOGRAPHY&emsp;–
+          </Typography>
           <Typography component="h2" variant="h1" gutterBottom>
             h1. Heading
           </Typography>
@@ -72,8 +94,12 @@ class App extends Component {
               overline text
           </Typography>
         </div>
+
         <div className="columnContainer">
-          <Card>
+          <Typography variant="h3" gutterBottom>
+            –&emsp;CARD / INLINE STYLE&emsp;–
+          </Typography>
+          <Card style={{ maxWidth: 345 }}>
             <CardActionArea>
             <CardMedia
               component="img"
@@ -100,14 +126,65 @@ class App extends Component {
             </CardActions>
           </Card>
         </div>
+
         <div className="columnContainer">
-          <Typography variant="h1" style={{ border: '1px solid red' }}>
+          <Typography variant="h3" gutterBottom>
+            –&emsp;CARD / OBJECT STYLE&emsp;–
+          </Typography>
+          <Card style={ this.styles.cardSample.card }>
+            <CardActionArea>
+            <CardMedia
+              component="img"
+              alt="Contemplative Reptile"
+              image={ require('./lizard.jpeg') }
+              title="Contemplative Reptile"
+            />
+            <CardContent style={ this.styles.cardSample.cardText }>
+              <Typography gutterBottom variant="h5" component="h2">
+                Lizard
+              </Typography>
+              <Typography component="p">
+                Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica
+              </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="small" color="primary">
+                Share
+              </Button>
+              <Button size="small" color="primary">
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
+        </div>
+
+        <div className="columnContainer">
+          <CardClass></CardClass>
+        </div>
+
+        <div className="columnContainer">
+          <CardClassState></CardClassState>
+        </div>
+
+        <div className="columnContainer">
+          <Typography variant="h3" gutterBottom>
+            –&emsp;TYPOGRAPHY / INLINE STYLE&emsp;–
+          </Typography>
+          <Typography variant="h1" style={{ border: '1px solid red' }} gutterBottom>
             h1. Heading
           </Typography>
-          <Typography variant="body1" style={this.bodyStyleSample}>
+        </div>
+
+        <div className="columnContainer">
+          <Typography variant="h3" gutterBottom>
+            –&emsp;TYPOGRAPHY / OBJECT STYLE&emsp;–
+          </Typography>
+          <Typography variant="body1" style={this.styles.typographySample}>
             body1. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos blanditiis tenetur unde suscipit, quam beatae rerum inventore consectetur, neque doloribus, cupiditate numquam dignissimos laborum fugiat deleniti? Eum quasi quidem quibusdam.
           </Typography>
         </div>
+
       </div>
     );
   }
